@@ -34,9 +34,9 @@ Installation requires `root` access. Obtaining `root` access on a Tigo CCA is ou
 Start by downloading the shared library and ensure that the `wrap_mesh.sh` script does not exist:
 
 ```console
-~ # curl -o /mnt/ffs/lib/tcpserial_hook.so https://…/tcpserial_hook.so
+~ # curl -L --insecure -o /mnt/ffs/lib/tcpserial_hook.so https://github.com/willglynn/tcpserial_hook/releases/download/v1.0.0/tcpserial_hook.so
 ~ # ls -l /mnt/ffs/mgmtu/bin/wrap_mesh.sh
-~ # 
+~ #
 ```
 
 Assuming `ls` did not show an existing `wrap_mesh.sh` script, create one and make it executable:
@@ -49,7 +49,7 @@ Assuming `ls` did not show an existing `wrap_mesh.sh` script, create one and mak
 Finally, restart `meshdcd`:
 
 ```console
-~ # /mnt/ffs/etc/rc.d/S040_MeshDCD 
+~ # /mnt/ffs/etc/rc.d/S040_MeshDCD
 Shutting down meshdcd from meshdcd launcher
 Killing program PID 3088
 Shutting down wrap_mesh.sh from meshdcd launcher
@@ -66,7 +66,7 @@ Remove the files and restart `meshdcd`.
 
 ```console
 ~ # rm /mnt/ffs/mgmtu/bin/wrap_mesh.sh /mnt/ffs/lib/tcpserial_hook.so
-~ # /mnt/ffs/etc/rc.d/S040_MeshDCD 
+~ # /mnt/ffs/etc/rc.d/S040_MeshDCD
 Shutting down meshdcd from meshdcd launcher
 Killing program PID 8158
 Shutting down wrap_mesh.sh from meshdcd launcher
